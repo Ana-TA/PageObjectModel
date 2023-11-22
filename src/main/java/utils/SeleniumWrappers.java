@@ -4,11 +4,13 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.TestException;
 
@@ -62,7 +64,7 @@ public class SeleniumWrappers extends BaseTest{
 	}
 	
 	
-	public void sendKeys(By locator, String text) {
+	public void sendKeys(By locator, String text, boolean pressEnter) {
 		Log.info("started method <sendKeys> on locator " + locator.toString());
 		WebElement element = returnWebElement(locator);
 		waitForElementToBeVisible(locator);
@@ -72,12 +74,15 @@ public class SeleniumWrappers extends BaseTest{
 			Log.info("called method <sendKeys()> on locator " + locator.toString());
 			element.sendKeys(text);
 			
+			if (pressEnter) {
+				element.sendKeys(Keys.ENTER);
+			}
+			
 		}catch(Exception e) {
 			//Log.error(e.getMessage());
 			throw new TestException("Element not found in <sendKeys>");
 		}
 	}
-	
 	
 	public void waitForElementToBeClickable(By locator) {
 		try {
@@ -113,5 +118,12 @@ public class SeleniumWrappers extends BaseTest{
 		return driver.findElement(locator).isDisplayed();
 	}
 	
+	
+	public void filterByValue(By locator, String value) {
+		
+		Select selectObj = new Select(returnWebElement(locator));
+		selectObj.selectByValue(value);
+		
+	}
 
 }

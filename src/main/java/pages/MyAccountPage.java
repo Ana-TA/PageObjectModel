@@ -21,8 +21,8 @@ public class MyAccountPage extends SeleniumWrappers{
 	
 	public void loginInApp(String user, String pass) {
 		
-		sendKeys(userField, user);
-		sendKeys(passField, pass);
+		sendKeys(userField, user, false);
+		sendKeys(passField, pass, false);
 		click(loginButton);
 	}
 
