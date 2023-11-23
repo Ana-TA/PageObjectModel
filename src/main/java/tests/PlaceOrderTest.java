@@ -52,10 +52,13 @@ public class PlaceOrderTest extends BaseTest{
 		app.click(coconutLinkLocator);
 		assertEquals(app.driver.getCurrentUrl(), app.searchResults.partialProductLink + partialUrl);
 		
+		//JavascriptExecutor jse = (JavascriptExecutor)driver;
 		app.click(app.product.addToCartButton);
-		/*String confirmAddedMsg = jse.executeScript("document.getElementsByClassName('woocommerce-message')[0].childNodes[2].nodeValue").toString();
-		assertEquals(confirmAddedMsg, "“" + title + "” " + app.product.partialSuccessAddedString);
-		*/
+		//String confirmAddedMsg = jse.executeScript("document.getElementsByClassName('woocommerce-message')[0].childNodes[2].nodeValue").toString();
+		WebElement msgg = app.returnWebElement(By.xpath("//div[@class='woocommerce-message']"));
+		System.out.println(msgg.getText().substring(10, msgg.getText().length()-1));
+		
+		//assertEquals(confirmAddedMsg, "“" + title + "” " + app.product.partialSuccessAddedString);
 		///assertTrue(app.elementIsDisplayed(app.product.confirmSuccessAddedMsg));
 		
 		
