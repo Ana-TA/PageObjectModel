@@ -52,15 +52,10 @@ public class PlaceOrderTest extends BaseTest{
 		app.click(coconutLinkLocator);
 		assertEquals(app.driver.getCurrentUrl(), app.searchResults.partialProductLink + partialUrl);
 		
-		//JavascriptExecutor jse = (JavascriptExecutor)driver;
 		app.click(app.product.addToCartButton);
-		//String confirmAddedMsg = jse.executeScript("document.getElementsByClassName('woocommerce-message')[0].childNodes[2].nodeValue").toString();
-		WebElement msgg = app.returnWebElement(By.xpath("//div[@class='woocommerce-message']"));
-		System.out.println(msgg.getText().substring(10, msgg.getText().length()-1));
-		
-		//assertEquals(confirmAddedMsg, "“" + title + "” " + app.product.partialSuccessAddedString);
-		///assertTrue(app.elementIsDisplayed(app.product.confirmSuccessAddedMsg));
-		
+		WebElement confirmAddedMsg = app.returnWebElement(By.xpath("//div[@class='woocommerce-message']"));
+		String AddToCarttext = confirmAddedMsg.getText().substring(10, confirmAddedMsg.getText().length());
+		assertEquals(AddToCarttext, "“" + title + "” " + app.product.partialSuccessAddedString);
 		
 		app.click(app.product.viewCartButton);
 		WebElement element = app.returnWebElement(app.cart.currentPrice);
@@ -72,10 +67,10 @@ public class PlaceOrderTest extends BaseTest{
 		app.click(app.cart.checkoutButton);
 		app.sendKeys(app.checkout.firstNameField, "firstName", false);
 		app.sendKeys(app.checkout.lastNameField, "lastName", false);
-		//app.filterByValue(app.checkout.countryDropdown, "Romania");
+		app.filterByValue(app.checkout.countryDropdown, "RO");
 		app.sendKeys(app.checkout.streetField, "street", false);
 		app.sendKeys(app.checkout.cityField, "Los Angeles", false);
-		//app.filterByValue(app.checkout.stateDropdown, "București");
+		app.filterByValue(app.checkout.stateDropdown, "B");
 		app.sendKeys(app.checkout.postcodeField, "90006", false);
 		app.sendKeys(app.checkout.phoneField, "077777777", false);
 		app.sendKeys(app.checkout.emailField, "test@test.com", false);

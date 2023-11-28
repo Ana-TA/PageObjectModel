@@ -16,7 +16,7 @@ public class CheckoutPage extends SeleniumWrappers{
 	public By countryDropdown = By.id("billing_country");
 	public By streetField = By.xpath("//input[@name='billing_address_1']");
 	public By cityField = By.xpath("//input[@name='billing_city']");
-	public By stateDropdown = By.id("select2-billing_state-container");
+	public By stateDropdown = By.id("billing_state");
 	public By postcodeField = By.xpath("//input[@name='billing_postcode']");
 	public By phoneField = By.xpath("//input[@type='tel']");
 	public By emailField = By.xpath("//input[@type='email' and @name='billing_email']");

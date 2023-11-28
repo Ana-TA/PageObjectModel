@@ -38,8 +38,8 @@ public class Driver {
 	
 	public ChromeOptions getChromeOptions() {
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("--headless");
-		options.addArguments("--window-size=1580, 1280");
+		//options.addArguments("--headless");
+		//options.addArguments("--window-size=1580, 1280");
 		return options;
 	}
 	
@@ -53,8 +53,8 @@ public class Driver {
 	
 	public EdgeOptions getEdgeOptions() {
 		EdgeOptions options = new EdgeOptions();
-		options.addArguments("--headless");
-		options.addArguments("--window-size=1580, 1280");
+		//options.addArguments("--headless");
+		//options.addArguments("--window-size=1580, 1280");
 		return options;
 	}
 

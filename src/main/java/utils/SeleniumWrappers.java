@@ -14,12 +14,13 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.TestException;
 
+import pages.ProductPage;
+
 public class SeleniumWrappers extends BaseTest{
 	
 	public SeleniumWrappers(WebDriver driver) {
 		this.driver = driver;
 	}
-	
 	
 	public void hoverElement(By locator) {
 		
@@ -124,6 +125,16 @@ public class SeleniumWrappers extends BaseTest{
 		Select selectObj = new Select(returnWebElement(locator));
 		selectObj.selectByValue(value);
 		
+	}
+	
+	public void addProductToWishlist(By categoryLocator, By productLocator, By addToWishlist, By closeWishListPopup, By homeLink) {
+		click(categoryLocator);
+		click(productLocator);
+		scrollVertically(300);
+		click(addToWishlist);
+		click(closeWishListPopup);
+		scrollVertically(-300);
+		click(homeLink);
 	}
 
 }

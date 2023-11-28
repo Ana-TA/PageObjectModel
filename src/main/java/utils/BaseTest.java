@@ -15,6 +15,8 @@ import org.testng.annotations.*;
 import com.google.common.io.Files;
 
 import pages.BasePage;
+import pages.HomePage;
+import pages.ProductPage;
 
 public class BaseTest extends Driver {
 	

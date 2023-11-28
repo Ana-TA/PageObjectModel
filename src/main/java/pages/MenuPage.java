@@ -12,5 +12,8 @@ public class MenuPage extends SeleniumWrappers{
 	}
 	
 	public By myAccountLink = By.linkText("My account");
+	public By wishlistLink =  By.linkText("Wishlist");
+	
+	public By cartCountIcon = By.xpath("//span[@class='cart-count-icon']");
 
 }

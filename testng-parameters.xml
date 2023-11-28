@@ -8,17 +8,17 @@
     	<parameter name ="user" value = "customer"/>  
 	    <parameter name ="pass" value = "customer@123"/>  
    
-    <test name="Edge" >
+<!--<test name="Edge" >
     	<parameter name="browser" value="edge"/>
         <classes>
-            <class name="tests.LoginTest" ></class>
+            <class name="tests.AssesmentProductsToBeOrderedTest" ></class>
         </classes>
-    </test>
+    </test>--> 
     
      <test name="Chrome" >
     	<parameter name="browser" value="chrome"/>
         <classes>
-            <class name="tests.LoginTest" ></class>
+            <class name="tests.AssesmentProductsToBeOrderedTest" ></class>
         </classes>
     </test>
 
