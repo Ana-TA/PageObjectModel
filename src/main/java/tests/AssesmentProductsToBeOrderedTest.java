@@ -30,10 +30,10 @@ public class AssesmentProductsToBeOrderedTest extends BaseTest{
 		
 		app.click(app.home.logoLink);
 		
-		app.addProductToWishlist(app.home.fruitsCategoryLink, app.fruitsAndVegetables.bananasLink, app.product.addToWishlist, app.product.closeWishListButton, app.home.logoLink);
-		app.addProductToWishlist(app.home.breakfastCategoryLink, app.breakfast.blueberriesLink, app.product.addToWishlist, app.product.closeWishListButton, app.home.logoLink);
-		app.addProductToWishlist(app.home.beveragesCategoryLink, app.beverages.lemonadeLink, app.product.addToWishlist, app.product.closeWishListButton, app.home.logoLink);
-		app.addProductToWishlist(app.home.breadsCategoryLink, app.breads.frenchCroissantLink, app.product.addToWishlist, app.product.closeWishListButton, app.home.logoLink);
+		app.product.addProductToWishlist(app.home.fruitsCategoryLink, app.fruitsAndVegetables.bananasLink);
+		app.product.addProductToWishlist(app.home.breakfastCategoryLink, app.breakfast.blueberriesLink);
+		app.product.addProductToWishlist(app.home.beveragesCategoryLink, app.beverages.lemonadeLink);
+		app.product.addProductToWishlist(app.home.breadsCategoryLink, app.breads.frenchCroissantLink);
 	
 		app.click(app.menu.wishlistLink);
 		app.scrollVertically(200);

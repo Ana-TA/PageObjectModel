@@ -126,15 +126,5 @@ public class SeleniumWrappers extends BaseTest{
 		selectObj.selectByValue(value);
 		
 	}
-	
-	public void addProductToWishlist(By categoryLocator, By productLocator, By addToWishlist, By closeWishListPopup, By homeLink) {
-		click(categoryLocator);
-		click(productLocator);
-		scrollVertically(300);
-		click(addToWishlist);
-		click(closeWishListPopup);
-		scrollVertically(-300);
-		click(homeLink);
-	}
 
 }

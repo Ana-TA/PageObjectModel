@@ -20,5 +20,15 @@ public class ProductPage extends SeleniumWrappers{
 	public By viewWishListButton = By.xpath("//button[@class='button tinvwl_button_view tinvwl-btn-onclick']");
 	
 	public String partialSuccessAddedString = "has been added to your cart.";
+	
+	public void addProductToWishlist(By categoryLocator, By productLocator) {
+		click(categoryLocator);
+		click(productLocator);
+		scrollVertically(300);
+		click(addToWishlist);
+		click(closeWishListButton);
+		scrollVertically(-300);
+		driver.get("https://keyfood.ro/");
+	}
 
 }

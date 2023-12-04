@@ -17,5 +17,6 @@ public class HomePage extends SeleniumWrappers{
 	public By fruitsCategoryLink = By.xpath("(//li[@class='category-parent  menu-item menu-item-type-taxonomy menu-item-object-product_cat'])[1]");
 	public By breakfastCategoryLink = By.xpath("(//li[@class='category-parent  menu-item menu-item-type-taxonomy menu-item-object-product_cat'])[3]");
 	public By beveragesCategoryLink = By.xpath("(//li[@class='category-parent  menu-item menu-item-type-taxonomy menu-item-object-product_cat'])[4]");
-	public By breadsCategoryLink = By.xpath("(//li[@class='category-parent  menu-item menu-item-type-taxonomy menu-item-object-product_cat'])[5]");
+	//public By breadsCategoryLink = By.xpath("(//li[@class='category-parent  menu-item menu-item-type-taxonomy menu-item-object-product_cat'])[5]");
+	public By breadsCategoryLink = By.xpath("(//ul[@class='menu-list']/li)[5]");
 }
